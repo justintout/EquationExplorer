@@ -36,22 +36,22 @@ public class Memory extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    void openAMAT(View view) {
+    public void openAMAT(View view) {
         Intent intent = new Intent(this, AMAT.class);
         startActivity(intent);
     }
 
-    void openCPUMemRW(View view) {
+    public void openCPUMemRW(View view) {
         Intent intent = new Intent(this, CPUMemRW.class);
         startActivity(intent);
     }
 
-    void openCPUMemWT(View view) {
+    public void openCPUMemWT(View view) {
         Intent intent = new Intent(this, CPUMemWT.class);
         startActivity(intent);
     }
 
-    void openCPIMem(View view) {
+    public void openCPIMem(View view) {
         Intent intent = new Intent(this, CPIMem.class);
         startActivity(intent);
     }

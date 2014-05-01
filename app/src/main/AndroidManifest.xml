@@ -42,7 +42,7 @@
         </activity>
         <activity
             android:name="com.eecs314.equationexplorer.AMAT"
-            android:label="Average Memory Access Time"
+            android:label="@string/title_activity_amat"
             android:parentActivityName="com.eecs314.equationexplorer.Memory" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -50,7 +50,7 @@
         </activity>
         <activity
             android:name="com.eecs314.equationexplorer.CPIMem"
-            android:label="CPI with Memory Misses"
+            android:label="@string/title_activity_cpimem"
             android:parentActivityName="com.eecs314.equationexplorer.Memory" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -58,7 +58,7 @@
         </activity>
         <activity
             android:name="com.eecs314.equationexplorer.CPUMemRW"
-            android:label="CPU Time with Read/Write Cache"
+            android:label="@string/title_activity_cpumem_rw"
             android:parentActivityName="com.eecs314.equationexplorer.Memory" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -66,7 +66,7 @@
         </activity>
         <activity
             android:name="com.eecs314.equationexplorer.CPUMemWT"
-            android:label="CPU Time with Write-Through Cache"
+            android:label="@string/title_activity_cpumem_wt"
             android:parentActivityName="com.eecs314.equationexplorer.Memory" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -74,7 +74,7 @@
         </activity>
         <activity
             android:name="com.eecs314.equationexplorer.ImprovedTime"
-            android:label="Time Improvements"
+            android:label="@string/title_activity_improved_time"
             android:parentActivityName="com.eecs314.equationexplorer.Performance" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -82,7 +82,7 @@
         </activity>
         <activity
             android:name="com.eecs314.equationexplorer.OverallSpeedup"
-            android:label="Overall Speedup"
+            android:label="@string/title_activity_overall_speedup"
             android:parentActivityName="com.eecs314.equationexplorer.Performance" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -90,7 +90,7 @@
         </activity>
         <activity
             android:name="com.eecs314.equationexplorer.RelativePerformance"
-            android:label="Relative Performance"
+            android:label="@string/title_activity_relative_performance"
             android:parentActivityName="com.eecs314.equationexplorer.Performance" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

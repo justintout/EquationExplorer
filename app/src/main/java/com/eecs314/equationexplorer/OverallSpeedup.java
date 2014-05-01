@@ -9,27 +9,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by JustinTout on 5/1/14.
- * Relative Performance = performance x / performance y = exec time y/exec time x = n (x is n time faster)
-
- */
-public class RelativePerformance extends ActionBarActivity implements Equation {
+public class OverallSpeedup extends ActionBarActivity implements Equation {
 
     private double[] values = new double[2];
-    private String toDisplay = "Relative Performance = Execution Time y / Execution Time x";
+    private String toDisplay = "Overall Speedup = 1/((1-P) + (P/S))";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relativeperformance);
+        setContentView(R.layout.activity_overallspeedup);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.relative_performance, menu);
+        getMenuInflater().inflate(R.menu.overall_speedup, menu);
         return true;
     }
 
@@ -47,7 +42,7 @@ public class RelativePerformance extends ActionBarActivity implements Equation {
 
     @Override
     public double calculate() {
-        return values[0]/values[1];
+        return 1.0/((1.0 - values[0]) + (values[0]/values[1]));
     }
 
     @Override
@@ -63,18 +58,18 @@ public class RelativePerformance extends ActionBarActivity implements Equation {
     }
 
     public String toString(){
-        return values[0] + "/" + values[1];
+        return "1/((1-" + values[0] + ") + (" + values[0] + "/" + values[1] + "))";
     }
 
     public double[] getVariablesInApp() {
         double toReturn[] = {0.0, 0.0};
-        EditText temp = (EditText)findViewById(R.id.performance0);
+        EditText temp = (EditText)findViewById(R.id.speedup0);
         if (temp.getText().toString().matches("")) {
             Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
             return toReturn;
         } else
             toReturn[0] = Double.parseDouble(temp.getText().toString());
-        temp = (EditText)findViewById(R.id.performance1);
+        temp = (EditText)findViewById(R.id.speedup1);
         if (temp.getText().toString().matches("")) {
             Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
             return toReturn;
@@ -85,10 +80,10 @@ public class RelativePerformance extends ActionBarActivity implements Equation {
 
     public void updateAndCalculate(View view) {
         setVariables(getVariablesInApp());
-        TextView variableString = (TextView)findViewById(R.id.performancevariablestring);
+        TextView variableString = (TextView)findViewById(R.id.speedupvariablestring);
         variableString.setText(toString());
         double result =  calculate();
-        TextView tv = (TextView)findViewById(R.id.performancetimeresult);
+        TextView tv = (TextView)findViewById(R.id.speeduptimeresult);
         tv.setText(String.valueOf(result));
     }
 

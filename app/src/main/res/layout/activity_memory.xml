@@ -1,55 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <RelativeLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
 
         <Button
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:text="AMAT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:text="Average Memory Access Time"
             android:id="@+id/amat"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="41dp"
-            android:layout_marginTop="155dp"
             android:onClick="openAMAT"/>
 
         <Button
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="Read/Write Cache"
             android:id="@+id/rw_cache"
-            android:layout_alignTop="@+id/amat"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="48dp"
             android:onClick="openCPUMemRW"/>
 
         <Button
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="Mem-Stall Cycle"
             android:id="@+id/memstall"
-            android:layout_below="@+id/amat"
-            android:layout_alignLeft="@+id/amat"
-            android:layout_alignStart="@+id/amat"
             android:onClick="openCPIMem"/>
 
         <Button
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="Write Through Cache"
             android:id="@+id/wt_cache"
-            android:layout_alignTop="@+id/memstall"
-            android:layout_alignLeft="@+id/rw_cache"
-            android:layout_alignStart="@+id/amat"
             android:onClick="openCPUMemWT"/>
-    </RelativeLayout>
+        </LinearLayout>
 </LinearLayout>

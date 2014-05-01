@@ -11,5 +11,12 @@
     <string name="title_activity_performance">Performance</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_memory">Memory</string>
+    <string name="title_activity_amat">AMAT</string>
+    <string name="title_activity_cpimem">CPIMem</string>
+    <string name="title_activity_cpumem_rw">CPUMemRW</string>
+    <string name="title_activity_cpumem_wt">CPUMemWT</string>
+    <string name="title_activity_improved_time">ImprovedTime</string>
+    <string name="title_activity_overall_speedup">OverallSpeedup</string>
+    <string name="title_activity_relative_performance">RelativePerformance</string>
 
 </resources>

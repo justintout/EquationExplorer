@@ -9,27 +9,23 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by JustinTout on 5/1/14.
- * Relative Performance = performance x / performance y = exec time y/exec time x = n (x is n time faster)
+public class AMAT extends ActionBarActivity implements Equation {
 
- */
-public class RelativePerformance extends ActionBarActivity implements Equation {
-
-    private double[] values = new double[2];
-    private String toDisplay = "Relative Performance = Execution Time y / Execution Time x";
+    private double[] values = new double[3];
+    private String toDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relativeperformance);
+        setContentView(R.layout.activity_amat);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.relative_performance, menu);
+        getMenuInflater().inflate(R.menu.amat, menu);
         return true;
     }
 
@@ -47,7 +43,7 @@ public class RelativePerformance extends ActionBarActivity implements Equation {
 
     @Override
     public double calculate() {
-        return values[0]/values[1];
+        return values[0] + (values[1] * values[2]);
     }
 
     @Override
@@ -57,39 +53,42 @@ public class RelativePerformance extends ActionBarActivity implements Equation {
 
     @Override
     public void setVariables(double[] input) {
-        for(int i = 0; i < values.length; i++){
+        for(int i = 0; i < 3; i++){
             values[i] = input[i];
         }
     }
 
     public String toString(){
-        return values[0] + "/" + values[1];
+        return values[0] + " + " + values[1] + " * " + values[2];
     }
 
     public double[] getVariablesInApp() {
-        double toReturn[] = {0.0, 0.0};
-        EditText temp = (EditText)findViewById(R.id.performance0);
+        double toReturn[] = {0.0, 0.0, 0.0};
+        EditText temp = (EditText)findViewById(R.id.amat0);
         if (temp.getText().toString().matches("")) {
             Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
             return toReturn;
-        } else
-            toReturn[0] = Double.parseDouble(temp.getText().toString());
-        temp = (EditText)findViewById(R.id.performance1);
+        } else toReturn[0] = Double.parseDouble(temp.getText().toString());
+        temp = (EditText)findViewById(R.id.amat1);
         if (temp.getText().toString().matches("")) {
             Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
             return toReturn;
-        } else
-            toReturn[1] = Double.parseDouble(temp.getText().toString());
+        } else toReturn[1] = Double.parseDouble(temp.getText().toString());
+        temp = (EditText)findViewById(R.id.amat2);
+        if (temp.getText().toString().matches("")) {
+            Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
+            return toReturn;
+        } else toReturn[2] = Double.parseDouble(temp.getText().toString());
         return toReturn;
     }
 
     public void updateAndCalculate(View view) {
         setVariables(getVariablesInApp());
-        TextView variableString = (TextView)findViewById(R.id.performancevariablestring);
+        TextView variableString = (TextView)findViewById(R.id.amatvariablestring);
         variableString.setText(toString());
         double result =  calculate();
-        TextView tv = (TextView)findViewById(R.id.performancetimeresult);
+        TextView tv = (TextView)findViewById(R.id.amatresult);
         tv.setText(String.valueOf(result));
     }
-
 }
+

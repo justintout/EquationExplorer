@@ -36,19 +36,18 @@ public class Performance extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    void openImprovedTime(View view) {
+    public void openImprovedTime(View view) {
         Intent intent = new Intent(this, ImprovedTime.class);
         startActivity(intent);
     }
 
-    void openOverallSpeedup(View view) {
+    public void openOverallSpeedup(View view) {
         Intent intent = new Intent(this, OverallSpeedup.class);
         startActivity(intent);
     }
 
-    void openRelativePerformance(View view) {
+    public void openRelativePerformance(View view) {
         Intent intent = new Intent(this, RelativePerformance.class);
         startActivity(intent);
     }
-
 }

@@ -12,38 +12,12 @@ import android.widget.Toast;
 /**
  * Created by JustinTout on 5/1/14.
  * T improved = (T affected/improvement factor) + T unaffected
+
  */
 public class ImprovedTime extends ActionBarActivity implements Equation {
 
     private double[] values = new double[3];
     private String toDisplay = "Improved Time = (Affected Time / Improvement Factor) + Unaffected Time";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_improvedtime);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.improved_time, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public double calculate() {
