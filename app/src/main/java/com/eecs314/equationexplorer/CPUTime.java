@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CPUTime extends ActionBarActivity implements Equation {
 
@@ -62,15 +63,23 @@ public class CPUTime extends ActionBarActivity implements Equation {
     }
 
     public double[] getVariablesInApp() {
-        double toReturn[] = new double[3];
+        double toReturn[] = {0.0, 0.0, 0.0};
         EditText temp = (EditText)findViewById(R.id.cputime0);
-        toReturn[0] = Double.parseDouble(temp.getText().toString());
-        System.out.println(toReturn[0]);
+        if (temp.getText().toString().matches("")) {
+            Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
+            return toReturn;
+        } else
+            toReturn[0] = Double.parseDouble(temp.getText().toString());
         temp = (EditText)findViewById(R.id.cputime1);
-        toReturn[1] = Double.parseDouble(temp.getText().toString());
+        if (temp.getText().toString().matches("")) {
+            Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
+            return toReturn;
+        } else toReturn[1] = Double.parseDouble(temp.getText().toString());
         temp = (EditText)findViewById(R.id.cputime2);
-        toReturn[2] = Double.parseDouble(temp.getText().toString());
-        System.out.println(toReturn[0] + ", " + toReturn[1] + ", " + toReturn[2]);
+        if (temp.getText().toString().matches("")) {
+            Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
+            return toReturn;
+        } else toReturn[2] = Double.parseDouble(temp.getText().toString());
         return toReturn;
     }
 

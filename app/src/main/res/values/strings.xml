@@ -8,5 +8,8 @@
     <string name="executionx">Execution Time<sub>X</sub></string>
     <string name="executionstring">= Execution Time<sub>Y</sub> / Execution Time<sub>X</sub></string>
     <string name="timprovedequationstring">= (Affected Time / Improvement Factor) + Unaffected Time</string>
+    <string name="title_activity_performance">Performance</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_memory">Memory</string>
 
 </resources>

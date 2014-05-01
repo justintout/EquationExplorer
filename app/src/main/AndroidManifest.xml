@@ -9,20 +9,93 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.eecs314.equationexplorer.ComputerArchitecture"
-            android:label="Equation Explorer">
+            android:label="Equation Explorer" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.eecs314.equationexplorer.CPUTime"
             android:label="CPU Time"
             android:parentActivityName="com.eecs314.equationexplorer.ComputerArchitecture" >
             <meta-data
                 android:name="andorid.support.PARENT_ACTIVITY"
-                android:value="com.eecs314.equationexplorer.ComputerArchitecture"/>
+                android:value="com.eecs314.equationexplorer.ComputerArchitecture" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.Performance"
+            android:label="@string/title_activity_performance"
+            android:parentActivityName="com.eecs314.equationexplorer.ComputerArchitecture" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.ComputerArchitecture" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.Memory"
+            android:label="@string/title_activity_memory"
+            android:parentActivityName="com.eecs314.equationexplorer.ComputerArchitecture" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.ComputerArchitecture" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.AMAT"
+            android:label="Average Memory Access Time"
+            android:parentActivityName="com.eecs314.equationexplorer.Memory" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.Memory" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.CPIMem"
+            android:label="CPI with Memory Misses"
+            android:parentActivityName="com.eecs314.equationexplorer.Memory" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.Memory" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.CPUMemRW"
+            android:label="CPU Time with Read/Write Cache"
+            android:parentActivityName="com.eecs314.equationexplorer.Memory" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.Memory" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.CPUMemWT"
+            android:label="CPU Time with Write-Through Cache"
+            android:parentActivityName="com.eecs314.equationexplorer.Memory" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.Memory" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.ImprovedTime"
+            android:label="Time Improvements"
+            android:parentActivityName="com.eecs314.equationexplorer.Performance" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.Performance" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.OverallSpeedup"
+            android:label="Overall Speedup"
+            android:parentActivityName="com.eecs314.equationexplorer.Performance" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.Performance" />
+        </activity>
+        <activity
+            android:name="com.eecs314.equationexplorer.RelativePerformance"
+            android:label="Relative Performance"
+            android:parentActivityName="com.eecs314.equationexplorer.Performance" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.Performance" />
         </activity>
     </application>
+
 </manifest>
