@@ -1,10 +1,12 @@
 package com.eecs314.equationexplorer;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -85,11 +87,16 @@ public class ImprovedTime extends ActionBarActivity implements Equation {
             Toast.makeText(this, "Please enter all values", Toast.LENGTH_SHORT).show();
             return toReturn;
         } else
-            toReturn[1] = Double.parseDouble(temp.getText().toString());
+            toReturn[2] = Double.parseDouble(temp.getText().toString());
         return toReturn;
     }
 
     public void updateAndCalculate(View view) {
+        InputMethodManager inputManager = (InputMethodManager)
+                getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                InputMethodManager.HIDE_NOT_ALWAYS);
         setVariables(getVariablesInApp());
         TextView variableString = (TextView)findViewById(R.id.timprovedvariablestring);
         variableString.setText(toString());
