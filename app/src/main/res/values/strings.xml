@@ -4,5 +4,9 @@
     <string name="app_name">Equation Explorer</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_cputime">CPUTime</string>
+    <string name="executiony">Execution Time<sub>Y</sub></string>
+    <string name="executionx">Execution Time<sub>X</sub></string>
+    <string name="executionstring">= Execution Time<sub>Y</sub> / Execution Time<sub>X</sub></string>
+    <string name="timprovedequationstring">= (Affected Time / Improvement Factor) + Unaffected Time</string>
 
 </resources>
