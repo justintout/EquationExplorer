@@ -8,14 +8,21 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.eecs314.equationexplorer.CPUTime"
-            android:label="@string/app_name" >
+            android:name="com.eecs314.equationexplorer.ComputerArchitecture"
+            android:label="Equation Explorer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <activity
+            android:name="com.eecs314.equationexplorer.CPUTime"
+            android:label="CPU Time"
+            android:parentActivityName="com.eecs314.equationexplorer.ComputerArchitecture" >
+            <meta-data
+                android:name="andorid.support.PARENT_ACTIVITY"
+                android:value="com.eecs314.equationexplorer.ComputerArchitecture"/>
+        </activity>
+    </application>
 </manifest>
